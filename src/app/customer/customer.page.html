@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="primary">
+          <ion-button (click)="proseslogout()"><ion-icon slot="end" name="log-out"></ion-icon></ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-buttons slot="primary" (click)="addCustomer()">
+      <ion-button color="tertiary" fill="outline">
+        Buscar
+        <ion-icon slot="end" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    Bienvenido {{rut}} 
+   
+    <br>
+    <br>
+    <br>
+
+
+   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Deslize Para Actualizar"
+      refreshingSpinner="circles"
+      refreshingText="Cargando">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let customer of customers">
+
+  
+      <ion-item>
+        <ion-label>{{customer.cod_analisi}}</ion-label>
+        <ion-label>{{customer.nom_matriz}}</ion-label>
+        <ion-label>{{customer.fecha_ac}}</ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+
+        <ion-item-option color="secondary" (click)="showCustomer(customer.cod_analisi,customer.nom_prueba,customer.nom_metodo)">Ver</ion-item-option>
+     
+
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-infinite-scroll   (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Espere Un Momento">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  
+</ion-content>

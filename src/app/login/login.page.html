@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-img style="width: 45rem; height:5rem;" src="../../assets/logo.png"></ion-img>
+        <ion-title class="txt_version"><strong>V 0.5</strong> </ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding style="--background: white;">
+    <ion-list style="width: 21rem; height: 26rem; margin: 0 auto; margin-top: 20%;">
+        <div style="width: 100%; height: 20%;">
+            <ion-img style="width: 80%; height:80%; margin: 0 auto; margin-top: 2.5rem;" src="../../assets/logob.png"></ion-img>
+        </div>
+        <ion-item id="bg_form">
+            <ion-input [(ngModel)]="rut" placeholder="Ingrese su RUT">
+                <ion-icon name="person"></ion-icon>&nbsp;&nbsp;&nbsp;</ion-input>
+        </ion-item>
+
+        <ion-item id="bg_form">
+            <ion-input type="password" [(ngModel)]="pass" placeholder="Ingrese Contraseña">
+                <ion-icon name="lock"></ion-icon>&nbsp;&nbsp;&nbsp;</ion-input>
+        </ion-item>
+        <div padding>
+            <ion-button color="dark" size="large" expand="full" (click)="proseslogin()" style="width: 7rem; margin: 0 auto; font-size: 16px;"><strong>Ingresar</strong></ion-button>
+        </div>
+    </ion-list>
+
+    <ion-footer style="margin-top: 20rem;">
+        <ion-title style="color: #b4b2b2; font-size: 16px;">Copyright &copy; Soluciones Tecnologicas y Dgitiales Spa 2020
+            <ion-img style="width: 8%; margin: 0 auto; padding-top: 2px;" src="../../assets/logo_styd.png"></ion-img>
+        </ion-title>
+    </ion-footer>
+</ion-content>
