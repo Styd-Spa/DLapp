@@ -15,7 +15,7 @@ export class CustomerPage implements OnInit {
 
   customers: any = [];
   limit: number = 10000;
-  estado: number = 3;
+  estado: number = 2;
   start: number = 0;
   rut: string;
   inicio: String ;
